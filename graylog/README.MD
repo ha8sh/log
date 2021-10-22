@@ -20,3 +20,10 @@ docker run --name graylog --link mongo --link elasticsearch \
     -e GRAYLOG_HTTP_EXTERNAL_URI="http://[ublic-ip:9000"/   \
     -e GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918 \
     -d graylog/graylog:3.0
+
+
+
+nano /etc/rsyslog.conf
+
+*.* @@graylog.company:514;RSYSLOG_SyslogProtocol23Format
+
